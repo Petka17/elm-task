@@ -1,0 +1,7 @@
+.justifyCenter > div {
+  justify-content: center !important;
+}
+
+.justifyCenter {
+  justify-content: center !important;
+}

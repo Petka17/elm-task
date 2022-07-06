@@ -1,0 +1,8 @@
+node_modules
+elm-stuff
+build
+.env
+*.log
+.DS_Store
+src/Data
+assets/js/app.js

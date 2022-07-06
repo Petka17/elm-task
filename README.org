@@ -1,0 +1,64 @@
+* Description
+This is a repo with test task for candidates for the Bookswap project.
+
+* How to run the development server
+#+begin_src shell
+
+  yarn # install all dependencies, node >=16 is required
+  yarn graphql:generate # generate GraphQL types for StarWars API
+  yarn app:serve:debug # run development server on port 8889
+
+#+end_src
+
+* Overview
+#+begin_src 
+
+assets
+├── images
+│   └── favicon.png
+├── index.html        <-- base HTML file
+├── js
+│   ├── app.js        <-- file generated from Elm code
+│   └── initApp.js    <-- js code that wire Elm app to the application
+└── style.css         <-- custom styles (if needed)
+src
+├── Data              <-- generated GraphQL types, no need to change it
+└── Main.elm          <-- entry point for Elm program
+
+#+end_src
+
+* Instructions
+- add a new column to the table with button "More info" (/Hint: use `Element.Input.button`/)
+- when click on the button we need to run a query for getting detail info about a person  
+  #+begin_src graphql
+
+    query person {
+      person(id: "cGVvcGxlOjM=") {
+        name
+        birthYear
+        height
+        species {
+          name
+        }
+      }
+    }
+
+  #+end_src
+- render this data however you like  
+- (optional) show loader
+
+/Note/:
+#+begin_src elm
+
+  Element.text <| String.fromInt 10
+  -- is exactly the same as
+  Element.text (String.fromInt 10)
+
+#+end_src
+
+* Useful Links
+- [[https://github.com/mdgriffith/elm-ui/tree/1.1.8][elm-ui docs]]
+- [[https://korban.net/elm/elm-ui-patterns/][elm-ui patterns]]
+- [[https://github.com/dillonkearns/elm-graphql/tree/5.0.10][elm-graphl]]
+- [[https://graphql.org/swapi-graphql/][StarWars API]]
+
